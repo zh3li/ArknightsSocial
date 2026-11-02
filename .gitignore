@@ -1,0 +1,7 @@
+node_modules/
+dist/
+build/data/
+__pycache__/
+*.pyc
+.DS_Store
+web/shot-*.png

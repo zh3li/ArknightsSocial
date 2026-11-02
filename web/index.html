@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preload" as="fetch" crossorigin href="./data/graph.json" />
+    <title>明日方舟社交圈 · Arknights Social</title>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <header id="topbar">
+      <div id="brand">
+        <span class="brand-en">ARKNIGHTS&nbsp;SOCIAL</span>
+        <span class="brand-cn">明日方舟社交圈</span>
+      </div>
+      <div id="searchwrap">
+        <input id="search" list="nodelist" placeholder="搜索人物（如：塔露拉 / 阿米娅 / 银灰）" />
+        <datalist id="nodelist"></datalist>
+        <button id="btnGo" title="以该人物为中心查看">查看</button>
+      </div>
+      <nav id="modes">
+        <button data-mode="ego" class="active">人物网络</button>
+        <button data-mode="path">关系路径</button>
+      </nav>
+      <button id="btnRank">排行榜</button>
+    </header>
+
+    <aside id="controls">
+      <section>
+        <h3>关系类型</h3>
+        <div id="typeChecks"></div>
+        <label class="slider">
+          <span>最低权重 <b id="minWVal"></b></span>
+          <input type="range" id="minW" min="0" max="300" step="5" />
+        </label>
+      </section>
+      <section>
+        <h3>剧情范围</h3>
+        <div id="catChecks"></div>
+      </section>
+      <section id="egoCtrls">
+        <h3>自我网络</h3>
+        <label class="slider">
+          <span>最多邻居 <b id="topKVal">40</b></span>
+          <input type="range" id="topK" min="5" max="200" step="5" value="40" />
+        </label>
+      </section>
+      <section>
+        <h3>着色</h3>
+        <select id="colorBy">
+          <option value="faction">按势力</option>
+          <option value="comm">按社群（Louvain）</option>
+          <option value="kind">按身份（干员/NPC）</option>
+        </select>
+      </section>
+      <section class="legend">
+        <h3>图例</h3>
+        <div id="legendBody"></div>
+      </section>
+    </aside>
+
+    <main id="canvas"><div id="boot"><span class="boot-spin"></span>加载关系网…</div></main>
+
+    <aside id="panel">
+      <div id="panelContent"></div>
+    </aside>
+
+    <div id="rankModal" class="modal hidden">
+      <div class="modal-box">
+        <div class="modal-head">
+          <h3>排行榜</h3>
+          <select id="rankMetric">
+            <option value="pair">关系对·综合</option>
+            <option value="deg">连接数</option>
+            <option value="wdeg">加权连接</option>
+            <option value="btwn">中介中心性</option>
+            <option value="lines">台词数</option>
+            <option value="mentioned">被提及数</option>
+          </select>
+          <button id="btnRankClose">✕</button>
+        </div>
+        <div id="rankBody"></div>
+      </div>
+    </div>
+
+    <div id="pairModal" class="modal hidden">
+      <div class="modal-box">
+        <div class="modal-head">
+          <h3>关系对详情</h3>
+          <button id="btnPairClose">✕</button>
+        </div>
+        <div id="pairBody"></div>
+      </div>
+    </div>
+
+    <footer id="statusbar">
+      <span id="statCounts"></span>
+      <span id="statBuilt"></span>
+      <span class="hint">单击节点查看详情 · 双击节点以此为中心 · 拖拽平移 · 滚轮缩放</span>
+    </footer>
+
+    <script type="module" src="/src/app.ts"></script>
+  </body>
+</html>

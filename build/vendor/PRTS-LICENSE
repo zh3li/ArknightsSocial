@@ -1,0 +1,12 @@
+The file prts_realnames_wikitext.json contains the raw wikitext of the
+PRTS wiki page 「角色真名」, fetched via the MediaWiki API:
+
+    https://prts.wiki/w/角色真名  (页面名: 角色真名)
+    Fetched: 2026-10-10
+
+PRTS (prts.wiki) is a player-maintained Arknights wiki. Its contents are
+licensed under CC BY-NC-SA (Creative Commons Attribution-NonCommercial-
+ShareAlike), consistent with the site's footer licensing terms.
+
+Only the codename -> real-name mapping (factual data) is extracted by
+build/import_aliases.py; attribution is given here and in the project README.

@@ -22,7 +22,7 @@ Arknights Social 根据游戏中的全部剧情、档案、密录和语音文本
 
 ## 1. 快速开始
 
-**在线使用**：<https://l1zhe.github.io/ark-social/>（占位链接，部署后替换）
+**在线使用**：<https://zh3li.github.io/ArknightsSocial/>
 
 **本地部署**：
 

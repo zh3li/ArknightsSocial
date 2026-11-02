@@ -21,7 +21,7 @@ Writing fan works? Shipping? Catching up on the lore? All of it gets easier.
 
 ## 1. Quick Start
 
-**Online**: <https://l1zhe.github.io/ark-social/> (placeholder — replace once deployed)
+**Online**: <https://zh3li.github.io/ArknightsSocial/>
 
 **Local**:
 
